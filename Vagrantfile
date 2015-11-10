@@ -23,13 +23,13 @@ Vagrant.configure(2) do |config|
 		yum -y --disablerepo="epel" install php php-mysql php-gd php-xml
 		service httpd start
 		service mysqld start
-		mysql_secure_installation
+		#mysql_secure_installation
 		chkconfig httpd on
 		chkconfig mysqld on
 		echo "<?php phpinfo(); ?>" >>/var/www/html/info.php
 		service httpd restart
 		iptables -I INPUT 4 -p tcp --dport 80 -j ACCEPT
-		/root/random.pass
+		/vagrant/wiki_install.sh
     SHELL
 	end
     end
