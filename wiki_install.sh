@@ -19,7 +19,7 @@ FLUSH PRIVILEGES;
 EOF
 
 mysql -u root < /root/create.wiki
-mysql -u root < /root/set.pass
+#mysql -u root < /root/set.pass
 #rm /root/create.wiki
 #rm /root/set.pass
 
@@ -38,7 +38,7 @@ else
 	tar -zxf /root/mediawiki-1.25.3.tar.gz
 	ln -s /var/www/html/mediawiki-1.25.3 /var/www/html/mediawiki
 	chown -R apache:apache /var/www/html/mediawiki-1.25.3
-	cp /vagrant/cfg/LocalSettings.php /var/www/html/mediawiki
+	cp /vagrant/LocalSettings.php /var/www/html/mediawiki
 fi
 
 sed -i 's/DirectoryIndex.*$/DirectoryIndex index.html index.html.var index.php/' /etc/httpd/conf/httpd.conf
