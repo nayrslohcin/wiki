@@ -24,7 +24,8 @@ mysql -u root < /root/create.wiki
 #rm /root/set.pass
 
 cd /root
-curl -O http://releases.wikimedia.org/mediawiki/1.25/mediawiki-1.25.3.tar.gz
+wget http://releases.wikimedia.org/mediawiki/1.25/mediawiki-1.25.3.tar.gz
+#curl -O http://releases.wikimedia.org/mediawiki/1.25/mediawiki-1.25.3.tar.gz
 #curl -O http://releases.wikimedia.org/mediawiki/1.25/mediawiki-1.25.3.tar.gz.sig
 #gpg --verify mediawiki-1.25.3.tar.gz.sig mediawiki-1.25.3.tar.gz
 
