@@ -2,9 +2,9 @@
 
 groupadd -g 27 mysql
 useradd -u 27 -c "MySQL svc user" -g 27 mysql
-yum -y --disablerepo="epel" install httpd
-yum -y --disablerepo="epel" install mysql-server mysql
-yum -y --disablerepo="epel" install php php-mysql php-gd php-xml
+yum -y install httpd
+yum -y install mysql-server mysql
+yum -y install php php-mysql php-gd php-xml
 service httpd start
 service mysqld start
 #mysql_secure_installation
@@ -54,7 +54,7 @@ else
 	tar -zxf /root/mediawiki-1.25.3.tar.gz
 	ln -s /var/www/html/mediawiki-1.25.3 /var/www/html/mediawiki
 	chown -R apache:apache /var/www/html/mediawiki-1.25.3
-	cp ./LocalSettings.php /var/www/html/mediawiki
+	cp /tmp/wiki/LocalSettings.php /var/www/html/mediawiki
 fi
 
 sed -i 's/DirectoryIndex.*$/DirectoryIndex index.html index.html.var index.php/' /etc/httpd/conf/httpd.conf
